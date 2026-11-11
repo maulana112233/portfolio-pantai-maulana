@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FFFDF7;
+    color: #0F172A;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #FBBF24;
+    color: #000000;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FEF3C7;
+  border-left: 2px solid #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #0284C7;
+  border: 2px solid #000;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0369A1;
+}
+
+/* Neo-Brutalist 3D Flip Card */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Float & Bobbing Animations */
+@keyframes bobbing {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+@keyframes buoy-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-6px) rotate(-1.5deg);
+  }
+  75% {
+    transform: translateY(4px) rotate(1.5deg);
+  }
+}
+
+@keyframes letter-jump {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  40% {
+    transform: translateY(-32px) scale(1.15) rotate(6deg);
+  }
+  60% {
+    transform: translateY(-16px) scale(1.05) rotate(-3deg);
+  }
+  80% {
+    transform: translateY(4px) scale(0.95);
+  }
+}
+
+@keyframes wave-glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fly-across {
+  0% {
+    transform: translateX(-120px) translateY(0px);
+  }
+  50% {
+    transform: translateX(50vw) translateY(-25px);
+  }
+  100% {
+    transform: translateX(110vw) translateY(10px);
+  }
+}
+
+@keyframes pulse-beam {
+  0%, 100% {
+    opacity: 0.4;
+    transform: rotate(0deg);
+  }
+  50% {
+    opacity: 0.85;
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes splash-ring {
+  0% {
+    transform: scale(0.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.animate-bobbing {
+  animation: bobbing 3.5s ease-in-out infinite;
+}
+
+.animate-buoy {
+  animation: buoy-float 3s ease-in-out infinite;
+}
+
+.animate-letter-jump {
+  animation: letter-jump 0.85s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-fly {
+  animation: fly-across 18s linear infinite;
+}
+
+.animate-beam {
+  animation: pulse-beam 8s linear infinite;
+}
+
+.animate-splash {
+  animation: splash-ring 0.6s ease-out forwards;
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #0284c7 0%, #38bdf8 50%, #0284c7 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.clip-path-polygon {
+  clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+}
